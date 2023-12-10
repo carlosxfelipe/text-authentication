@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { View, TextInput, Button, Text, StatusBar, Image } from "react-native";
 import * as Clipboard from "expo-clipboard";
 import { BinarySearchTree } from "./src/BinarySearchTree";
+import { CustomButton } from "./src/CustomButton";
 import { styles } from "./src/styles";
 
 export default function App() {
@@ -76,15 +77,15 @@ export default function App() {
             onChangeText={(text) => setInputSentence(text)}
             value={inputSentence}
           />
-          <Button title="Processar Frase" onPress={processSentence} />
-          <Button title="Limpar" onPress={clearInputField} />
+          <CustomButton title="Processar Frase" onPress={processSentence} />
+          <CustomButton title="Limpar" onPress={clearInputField} />
         </View>
 
         <View style={styles.resultContainer}>
           <View style={styles.resultTextContainer}>
             {result !== "" && <Text style={styles.resultText}>Resultado:</Text>}
             <Text style={styles.normalText}>{result}</Text>
-            <Button title="Copiar Resultado" onPress={copyToClipboard} />
+            <CustomButton title="Copiar Resultado" onPress={copyToClipboard} />
             {copiedText !== "" && (
               <Text style={styles.successText}>{copiedText}</Text>
             )}

@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 
 export const styles = StyleSheet.create({
   container: {
@@ -12,25 +13,26 @@ export const styles = StyleSheet.create({
   userContainer: {
     marginTop: 60,
     flexDirection: "row",
+    alignItems: "center",
   },
   userImage: {
-    width: 48,
-    height: 48,
+    width: RFValue(32),
+    height: RFValue(32),
     borderRadius: 50,
     marginRight: 10,
   },
   headerText: {
-    fontSize: 20,
+    fontSize: RFPercentage(2),
     fontWeight: "bold",
     color: "white",
   },
   subHeaderText: {
-    fontSize: 16,
+    fontSize: RFPercentage(1.6),
     color: "white",
   },
   aboutText: {
     marginBottom: 20,
-    fontSize: 14,
+    fontSize: RFPercentage(1.4),
     color: "black",
     textAlign: "justify",
   },
@@ -42,7 +44,7 @@ export const styles = StyleSheet.create({
   inputField: {
     backgroundColor: "#F1F3F4",
     color: "black",
-    fontSize: 16,
+    fontSize: RFPercentage(1.6),
     height: 120,
     marginBottom: 10,
     padding: 10,
@@ -54,11 +56,11 @@ export const styles = StyleSheet.create({
   },
   resultText: {
     marginTop: 20,
-    fontSize: 18,
+    fontSize: RFPercentage(1.8),
     fontWeight: "bold",
   },
   normalText: {
-    fontSize: 16,
+    fontSize: RFPercentage(1.6),
   },
   successText: {
     color: "green",
