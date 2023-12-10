@@ -2,6 +2,8 @@
 
 Este aplicativo React Native foi desenvolvido como parte do projeto acadêmico da disciplina "Estrutura de Dados" (T390-88) da Universidade de Fortaleza (UNIFOR), ministrada pelo Professor Paulo Cirillo.
 
+<img src="preview.png" alt="Running Pokeqwik" width="600"/>
+
 ## Funcionalidades
 
 1. **Entrada de Frase:**
@@ -39,14 +41,7 @@ O aplicativo utiliza uma implementação de Árvore Binária de Busca para organ
 
 - **BinarySearchTree.js:**
 
-  - Define a classe `BinarySearchTree` que representa a Árvore Binária de Busca utilizada para processar as palavras.
-
-- **Node.js:**
-
-  - Define a classe `Node` que representa os nós da Árvore Binária de Busca.
-
-- **Crypt.js:**
-  - Contém funções para realizar operações de criptografia (SHA-1 neste caso), utilizadas para gerar hashes das palavras na árvore.
+  - Define a classe `BinarySearchTree` que contém a lógica de manipulação da Árvore Binária de Busca, incluindo as classes `Node` e `Crypt` necessárias.
 
 ## Como Executar
 
