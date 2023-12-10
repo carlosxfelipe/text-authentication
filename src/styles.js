@@ -6,12 +6,10 @@ export const styles = StyleSheet.create({
     flex: 1,
   },
   headerContainer: {
-    flex: 0.3,
     padding: 16,
-    backgroundColor: "#BA4DE3",
+    backgroundColor: "#612F74",
   },
   userContainer: {
-    marginTop: 60,
     flexDirection: "row",
     alignItems: "center",
   },
@@ -27,12 +25,12 @@ export const styles = StyleSheet.create({
     color: "white",
   },
   subHeaderText: {
-    fontSize: RFPercentage(1.6),
+    fontSize: RFPercentage(2),
     color: "white",
   },
   aboutText: {
     marginBottom: 20,
-    fontSize: RFPercentage(1.4),
+    fontSize: RFPercentage(1.75),
     color: "black",
     textAlign: "justify",
   },
@@ -44,7 +42,7 @@ export const styles = StyleSheet.create({
   inputField: {
     backgroundColor: "#F1F3F4",
     color: "black",
-    fontSize: RFPercentage(1.6),
+    fontSize: RFPercentage(2),
     height: 120,
     marginBottom: 10,
     padding: 10,
@@ -56,11 +54,11 @@ export const styles = StyleSheet.create({
   },
   resultText: {
     marginTop: 20,
-    fontSize: RFPercentage(1.8),
+    fontSize: RFPercentage(2.25),
     fontWeight: "bold",
   },
   normalText: {
-    fontSize: RFPercentage(1.6),
+    fontSize: RFPercentage(2),
   },
   successText: {
     color: "green",

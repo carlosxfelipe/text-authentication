@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { View, TextInput, Button, Text, StatusBar, Image } from "react-native";
+import {
+  View,
+  TextInput,
+  Button,
+  Text,
+  StatusBar,
+  Image,
+  SafeAreaView,
+} from "react-native";
 import * as Clipboard from "expo-clipboard";
 import { BinarySearchTree } from "./src/BinarySearchTree";
 import { CustomButton } from "./src/CustomButton";
@@ -48,7 +56,8 @@ export default function App() {
 
   return (
     <>
-      <StatusBar backgroundColor="#FFFFFF" barStyle="light-content" />
+      <StatusBar backgroundColor="#612F74" barStyle="light-content" />
+      <SafeAreaView style={{ backgroundColor: "#612F74" }} />
       <View style={styles.container}>
         <View style={styles.headerContainer}>
           <View style={styles.userContainer}>
