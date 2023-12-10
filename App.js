@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { View, TextInput, Button, Text } from "react-native";
+import { View, TextInput, Button, Text, StatusBar, Image } from "react-native";
 import * as Clipboard from "expo-clipboard";
 import { BinarySearchTree } from "./src/BinarySearchTree";
+import { styles } from "./src/styles";
 
 export default function App() {
   const [inputSentence, setInputSentence] = useState("");
@@ -45,43 +46,51 @@ export default function App() {
   };
 
   return (
-    <View style={{ padding: 16, flex: 1 }}>
-      <View style={{ marginTop: 80 }}>
-        <Text style={{ fontSize: 20, fontWeight: "bold" }}>
-          T390-88 Estrutura de dados
-        </Text>
-        <Text style={{ fontSize: 16 }}>Professor Paulo Cirillo</Text>
-      </View>
-      <View style={{ justifyContent: "center", marginTop: 60 }}>
-        <TextInput
-          style={{
-            height: 120,
-            borderColor: "gray",
-            borderWidth: 1,
-            marginBottom: 10,
-            padding: 10,
-            borderRadius: 8,
-          }}
-          multiline
-          placeholder="Digite uma frase"
-          onChangeText={(text) => setInputSentence(text)}
-          value={inputSentence}
-        />
-        <Button title="Processar Frase" onPress={processSentence} />
-        <Button title="Limpar" onPress={clearInputField} />
-        <View style={{ marginTop: 20 }}>
-          {result !== "" && (
-            <Text style={{ marginTop: 20, fontSize: 18, fontWeight: "bold" }}>
-              Resultado:
-            </Text>
-          )}
-          <Text style={{ fontSize: 16 }}>{result}</Text>
-          <Button title="Copiar Resultado" onPress={copyToClipboard} />
-          {copiedText !== "" && (
-            <Text style={{ color: "green", marginTop: 10 }}>{copiedText}</Text>
-          )}
+    <>
+      <StatusBar backgroundColor="#FFFFFF" barStyle="light-content" />
+      <View style={styles.container}>
+        <View style={styles.headerContainer}>
+          <View style={styles.userContainer}>
+            <Image
+              source={require("./assets/user-photo.jpeg")}
+              style={styles.userImage}
+            />
+            <View>
+              <Text style={styles.headerText}>T390-88 Estrutura de dados</Text>
+              <Text style={styles.subHeaderText}>Professor Paulo Cirillo</Text>
+            </View>
+          </View>
+        </View>
+
+        <View style={styles.inputContainer}>
+          <Text style={styles.aboutText}>
+            Este aplicativo React Native foi desenvolvido como parte do projeto
+            acadêmico da disciplina "Estrutura de Dados" (T390-88) da
+            Universidade de Fortaleza (UNIFOR), ministrada pelo Professor Paulo
+            Cirillo.
+          </Text>
+          <TextInput
+            style={styles.inputField}
+            multiline
+            placeholder="Digite uma frase"
+            onChangeText={(text) => setInputSentence(text)}
+            value={inputSentence}
+          />
+          <Button title="Processar Frase" onPress={processSentence} />
+          <Button title="Limpar" onPress={clearInputField} />
+        </View>
+
+        <View style={styles.resultContainer}>
+          <View style={styles.resultTextContainer}>
+            {result !== "" && <Text style={styles.resultText}>Resultado:</Text>}
+            <Text style={styles.normalText}>{result}</Text>
+            <Button title="Copiar Resultado" onPress={copyToClipboard} />
+            {copiedText !== "" && (
+              <Text style={styles.successText}>{copiedText}</Text>
+            )}
+          </View>
         </View>
       </View>
-    </View>
+    </>
   );
 }
